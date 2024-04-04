@@ -17,6 +17,6 @@ let var1= new String("Chaitanya")
     const trim = var2.trim() //trims starting and ending spaces
     console.log(trim);
 
-    console.log(var2.replaceAll('a','4'))
+    console.log(var2.replaceAll('a','4').trim()) // op: ch4it4ny4
 
     
