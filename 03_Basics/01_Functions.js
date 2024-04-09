@@ -7,7 +7,7 @@ function sayMyName(param) {
 // sayMyName()
 
 function addition(num1,num2) { // (num1,num2) these are parameters
-//    console.log( num1+num2);
+   console.log( num1+num2);
 }
 addition(1,2) // (1,2) these are arguments
 
