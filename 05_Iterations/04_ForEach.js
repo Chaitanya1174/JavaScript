@@ -1,7 +1,7 @@
 // using for each on array
     myArray= ["ananya","avanti","aradhya","aditi"]
     myArray.forEach(element => {
-        // console.log(element);
+    console.log(element);
     });
 
 // using for each on array including objects
@@ -32,9 +32,9 @@
         }
     ]
     objArray.forEach(element => {
-        // console.log(element.name);
+        console.log(element.name);
         if (element.name== "aditi") {
-            // console.log(`${element.name} is a bitch`); // cannot use continue or break in foreach statement 
+            console.log(`${element.name} is a bitch`); // cannot use continue or break in foreach statement 
         }
     });
 
@@ -42,14 +42,14 @@
     const bitch= objArray.forEach(element=>{element.name+"bitch"
     return
     })
-    // console.log(bitch); // op: undefined because for each does not return any value even if you used return
+    console.log(bitch); // op: undefined because for each does not return any value even if you used return
 
 // filter operator
     const bitchName= objArray.filter((item)=>(item.name="someBitch"))
-    // console.log(bitchName); // returns values
+    console.log(bitchName); // returns values
     const bitchPassword= objArray.filter((item)=>{
         item.password="someBitch@123"
         return item
     })
-    // console.log(bitchPassword); // use return if used object paranthesis
+    console.log(bitchPassword); // use return if used object paranthesis
 
