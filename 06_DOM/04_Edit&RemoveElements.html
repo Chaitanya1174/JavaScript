@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit & Remove elements</title>
+    
+</head>
+<body style="background-color: #212121; color: azure;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName) {
+       const li= document.createElement('li');
+       li.innerHTML= `${langName}`
+       document.querySelector(`.language`).appendChild(li)
+    }
+    addLang("python")
+    addLang("cpp")
+// following process does not require to traverse from the whole code tree which is more optimized
+    function addOptiLanguage(langName) {
+        const li= document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("java (newly added)")
+    addOptiLanguage("Mojang (newly added)")
+
+// edit (replacing whole element)
+    const secondLi= document.querySelector('li:nth-child(2)')
+    const newLi=document.createElement('li')
+    newLi.appendChild(document.createTextNode("mojo"))
+    // newLi.textContent= "Mojo" ...... another method to add text (similar to innerHTML)
+    secondLi.replaceWith(newLi)
+// remove
+    const lastLi = document.querySelector('li:last-child')
+    lastLi.remove()
+
+</script>
+</html>
