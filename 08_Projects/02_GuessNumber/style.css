@@ -1,0 +1,23 @@
+body{
+    background-color: #212121;
+}
+h1{
+    color: aliceblue;
+}
+form{
+    color: aliceblue;
+    font-size: 24px;
+}
+input{
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 10px;
+    align-content: center;
+}
+#submit{
+    background-color: rgb(8, 190, 8);
+    color: aliceblue ;
+}
+#userNum{
+    width: 350px;
+}
