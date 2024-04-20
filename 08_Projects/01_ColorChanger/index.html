@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorChanger</title>
+    <!-- <script type="module" src="javascript.js"></script> -->
+</head>
+<body>
+    <h1 class="heading">Click on the box to change background color</h1>
+    <div class="button" id="red">Red</div>
+    <div class="button" id="blue">Blue</div>
+    <div class="button" id="green">Green</div>
+    <div class="button" id="white">White</div>
+</body>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+        border-style: solid;
+        border-width: 1px;
+        margin: 10px;
+        text-align: center;
+        font-size: 25px;
+        position: relative;
+        align-content: center;
+        float: left;
+    }
+    #red{
+        background-color: rgb(248, 130, 130);
+    }
+    #blue{
+        background-color: rgb(92, 92, 250);
+    }
+    #green{
+        background-color: rgb(68, 226, 68);
+    }
+    #white{
+        background-color: white;
+    }
+
+</style>
+<script>
+const allButton = document.querySelectorAll('div')
+allButton.forEach(button => {
+    button.addEventListener('click',function (e) {
+        document.body.style.backgroundColor= e.target.innerHTML
+    })
+});
+</script>
+</html>
