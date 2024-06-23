@@ -23,7 +23,8 @@ function checkGuess(guess) {
     prevGuess.innerHTML += `${guess}, `
     if (totalAtt == 0) {
         console.log('no more attempts left')
-        playGame= false
+        // playGame= false
+        endGame()
     } else{
         if(guess == randomNum){
             console.log('you won..!');
