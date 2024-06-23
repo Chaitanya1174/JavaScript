@@ -6,6 +6,7 @@ let attemptLeft = document.querySelector('.attempts')
 let prevGuess = document.querySelector('.prevGuess')
 
 let totalAtt = 10
+attemptLeft.innerHTML=totalAtt
 let guessArray = []
 
 let playGame= true;
@@ -28,6 +29,7 @@ function checkGuess(guess) {
             playGame= false
         }else{
             totalAtt= totalAtt-1
+            attemptLeft.innerHTML=totalAtt
         }
     }
  }
