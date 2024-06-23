@@ -3,10 +3,12 @@ console.log(randomNum)
 const userNum = document.querySelector('#userNum')
 const submit = document.querySelector('#submit')
 let attemptLeft = document.querySelector('.attempts')
+let btn = document.querySelector('.btn')
 let prevGuess = document.querySelector('.prevGuess')
 
 let totalAtt = 10
 attemptLeft.innerHTML=totalAtt
+btn.innerHTML = "Submit"
 let guessArray = []
 
 let playGame= true;
@@ -39,4 +41,5 @@ function checkGuess(guess) {
  function endGame() {
     userNum.disabled = true;
     submit.disabled = true;
+    submit.innerHTML = "New Game";
 }
