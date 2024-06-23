@@ -18,6 +18,7 @@ if (playGame) {
         checkGuess(guess)
     })
 }
+
 function checkGuess(guess) {
     prevGuess.innerHTML += `${guess}, `
     if (totalAtt == 0) {
@@ -26,10 +27,15 @@ function checkGuess(guess) {
     } else{
         if(guess == randomNum){
             console.log('you won..!');
-            playGame= false
+            // playGame= false
+            endGame()
         }else{
             totalAtt= totalAtt-1
             attemptLeft.innerHTML=totalAtt
         }
     }
  }
+ function endGame() {
+    userNum.disabled = true;
+    submit.disabled = true;
+}
