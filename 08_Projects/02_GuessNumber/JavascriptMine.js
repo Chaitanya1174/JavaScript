@@ -39,7 +39,8 @@ function checkGuess(guess) {
     }
  }
  function endGame() {
-    userNum.disabled = true;
-    submit.disabled = true;
+    // userNum.disabled = true;
+    // submit.disabled = true;
+    submit.removeEventListener()
     submit.innerHTML = "New Game";
 }
