@@ -9,7 +9,7 @@ let userOne = new Object() // This is singleton object
         dob: new Date(2004,06,11),
         password: "abcxyz"
     }
-// console.log(userOne.fullName.name);
+// console.log(userOne.fullName.name); // Op: Chaitanya
 
 // merging objects
 
