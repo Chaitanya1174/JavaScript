@@ -34,6 +34,7 @@ addition(1,2) // (1,2) these are arguments
                             //undefined
 
 // use of rest operator
+   //A rest operator is a type of parameter that gets all of the remaining parameters of a function call via an Array. 
      function calculateCartPrice(...number1) { // ... is rest operator
         return number1  
      }
