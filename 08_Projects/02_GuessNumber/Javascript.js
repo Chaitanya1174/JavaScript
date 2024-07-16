@@ -75,6 +75,7 @@ function newGame() {
    const newGameButton = document.querySelector('#newGame')
    newGameButton.addEventListener('click',function (e) {
     randomNum= parseInt(Math.random()*100+1);
+    console.log(randomNum)
     prevGuessArray= []
     numGuess= 1
     prevGuess.innerHTML= ''

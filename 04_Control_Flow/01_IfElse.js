@@ -1,6 +1,6 @@
 // Control flow means controlling the execution of code which includes using statements like if, ifelse, etc.
 
-    let email="Chaitanya@yaoo.com"
+    let email="Chaitanya@hotmail.com"
     if (email) {
         console.log("user is logged in and");
     };
@@ -14,7 +14,7 @@
 
 
     if (email.includes("@google.com") || email.includes("@yahoo.com")) { 
-        console.log("famous user is logged in");
+        console.log("generic user is logged in");
     }else{
-        console.log("user is logged in using another email");
+        console.log("user who thinks he or she is an international interest is logged in");
     }
