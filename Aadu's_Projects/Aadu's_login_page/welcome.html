@@ -5,34 +5,56 @@
   <style>
     body {
       font-family: sans-serif;
-      background-color: #e0f7fa;
+      background-color: #f0f8ff;
       text-align: center;
       padding-top: 100px;
     }
     .box {
       background-color: white;
       padding: 30px;
-      width: 300px;
+      width: 320px;
       margin: auto;
       border-radius: 10px;
       box-shadow: 0 0 10px gray;
+    }
+    button {
+      margin: 15px 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
 
   <div class="box">
-    <h2>Welcome 🎉</h2>
-    <p id="message"></p>
+    <h2>Welcome to GH Raisoni College 🎓</h2>
+    <p id="welcomeMessage"></p>
+
+    <button onclick="goToQuiz()">Take Quiz</button>
+    <button onclick="goToAbout()">About College</button>
   </div>
 
   <script>
-    var name = localStorage.getItem("studentName");
-
+    const name = localStorage.getItem("studentName");
     if (name) {
-      document.getElementById("message").innerText = "Welcome to GH Raisoni College, " + name + "!";
+      document.getElementById("welcomeMessage").innerText = "Hello " + name + ", nice to see you!";
     } else {
-      document.getElementById("message").innerText = "Please login first.";
+      document.getElementById("welcomeMessage").innerText = "Hello Student!";
+    }
+
+    function goToQuiz() {
+      window.location.href = "quiz.html";
+    }
+
+    function goToAbout() {
+      window.location.href = "about.html";
     }
   </script>
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Quiz - GH Raisoni</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fff8e1;
+      text-align: center;
+      padding: 50px;
+    }
+    .quiz-container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      width: 400px;
+      margin: auto;
+    }
+    button {
+      padding: 8px 12px;
+      margin-top: 15px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .option {
+      display: block;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>Simple Quiz</h2>
+    <div id="quizBox">
+      <div class="question" id="question"></div>
+      <div id="options"></div>
+      <button onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="result" style="display:none;"></div>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does HTML stand for?",
+        options: ["Hyperlinks and Text Markup Language", "Hyper Text Markup Language", "Home Tool Markup Language"],
+        answer: "Hyper Text Markup Language"
+      },
+      {
+        question: "Which language is used for styling web pages?",
+        options: ["HTML", "JQuery", "CSS"],
+        answer: "CSS"
+      },
+      {
+        question: "Which is used for web development?",
+        options: ["Python", "JavaScript", "C++"],
+        answer: "JavaScript"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      document.getElementById("question").innerText = q.question;
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+
+      q.options.forEach(opt => {
+        optionsDiv.innerHTML += `<label class="option">
+          <input type="radio" name="option" value="${opt}"> ${opt}
+        </label>`;
+      });
+    }
+
+    function nextQuestion() {
+      const selected = document.querySelector('input[name="option"]:checked');
+      if (selected && selected.value === quizData[currentQuestion].answer) {
+        score++;
+      }
+
+      currentQuestion++;
+
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quizBox").style.display = "none";
+        document.getElementById("result").style.display = "block";
+        document.getElementById("result").innerHTML = `<h3>You scored ${score} out of ${quizData.length} 🎓</h3>`;
+      }
+    }
+
+    // Initial load
+    loadQuestion();
+  </script>
+
+</body>
+</html>
