@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Login - GH Raisoni College</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding-top: 50px;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 5px gray;
+    }
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+    button {
+      padding: 8px 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>GH Raisoni College Login</h2>
+
+  <form onsubmit="return checkLogin()">
+    <input type="text" id="name" placeholder="Your Name"><br>
+    <div id="nameError" class="error"></div>
+
+    <input type="text" id="mobile" placeholder="Mobile Number"><br>
+    <div id="mobileError" class="error"></div>
+
+    <input type="text" id="email" placeholder="Email ID"><br>
+    <div id="emailError" class="error"></div>
+
+    <input type="password" id="password" placeholder="Password"><br>
+    <div id="passwordError" class="error"></div>
+
+    <button type="submit">Login</button><br>
+    <button type="button" onclick="signup()">Sign Up</button>
+  </form>
+
+  <script>
+    function checkLogin() {
+      // Get values
+      var name = document.getElementById("name").value;
+      var mobile = document.getElementById("mobile").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      // Clear old errors
+      document.getElementById("nameError").innerText = "";
+      document.getElementById("mobileError").innerText = "";
+      document.getElementById("emailError").innerText = "";
+      document.getElementById("passwordError").innerText = "";
+
+      // Validate
+      var valid = true;
+
+      if (name === "" || !/^[A-Za-z ]+$/.test(name)) {
+        document.getElementById("nameError").innerText = "Enter a valid name";
+        valid = false;
+      }
+
+      if (!/^[6-9]\d{9}$/.test(mobile)) {
+        document.getElementById("mobileError").innerText = "Invalid mobile number";
+        valid = false;
+      }
+
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById("emailError").innerText = "Invalid email";
+        valid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById("passwordError").innerText = "Password too short";
+        valid = false;
+      }
+
+      if (valid) {
+        // Save name to use on next page
+        localStorage.setItem("studentName", name);
+        window.location.href = "welcome.html";
+      }
+
+      return false; // stop form from submitting
+    }
+
+    /function signup() {
+      alert("Sign up page coming soon!");
+    }
+  </script>
+
+</body>
+</html>

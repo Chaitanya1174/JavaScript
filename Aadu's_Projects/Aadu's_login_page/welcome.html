@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome - GH Raisoni College</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #e0f7fa;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .box {
+      background-color: white;
+      padding: 30px;
+      width: 300px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Welcome 🎉</h2>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    var name = localStorage.getItem("studentName");
+
+    if (name) {
+      document.getElementById("message").innerText = "Welcome to GH Raisoni College, " + name + "!";
+    } else {
+      document.getElementById("message").innerText = "Please login first.";
+    }
+  </script>
+
+</body>
+</html>
