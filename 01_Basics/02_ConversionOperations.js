@@ -1,14 +1,14 @@
 // Any type of Data could be converted into other type
 let abc = 123
 console.log(abc);
-console.log(typeof abc);
+console.log("typeof abc is:",typeof abc);
 
 xyz = String(abc)
-console.log(xyz);
-console.log(typeof xyz);
+console.log("after converting into string:",xyz);
+console.log("typeof xyz after converting to string:",typeof xyz);
 
-console.log(typeof abc); 
 // The original type does not change.. you can only make it act like another type of data in another line of code
+console.log(typeof abc); 
 
 // ----------------OPERATIONS-----------------------
 console.log(3+2);
