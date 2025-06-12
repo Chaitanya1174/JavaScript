@@ -7,8 +7,8 @@ let var1= new String("Chaitanya")
     console.log(var1.toUpperCase()); // op: CHAITANYA
     console.log(var1.indexOf('y')); // op: 7
 
-    const substring = var1.substring(4,9) //creating substring, negative values can't be used
-    console.log(substring); // op: tanya
+    const substring = var1.substring(0,4) //creating substring, negative values can't be used
+    console.log(substring); // op: Chai
 
     const sliceSt = var1.slice(-4,9)
     console.log(sliceSt); // op: anya
