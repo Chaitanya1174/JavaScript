@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141;">
+     <ul id="images">
+            <li><img src="Wallpaper.jpg" alt="" width="300px" id="wallpaper"></li>
+            <li><img src="rickAndMorty.jpg" alt="" width="300px" id="rickAndMorty"></li>
+            <li><img src="sketch.jpg" alt="" width="300px" id="sketch"></li>
+            <li><a style="color: white;" href="http://google.com" id="google">googlya</a></li>
+     </ul>
+
+</body>
+<script>
+//store elements
+    allImg= document.getElementById('images')
+    wallpaper=document.getElementById('wallpaper');
+    rickAndMorty=document.getElementById('rickAndMorty');
+    sketch=document.getElementById('sketch');
+    google= document.getElementById('google');
+
+//Adding event listeners
+
+    // //using onclick gives us lesser information about the event
+    // wallpaper.onclick=function () {alert('wallpaper clicked')}
+
+    // //using event listener is best
+    // rickAndMorty.addEventListener('click',function () {alert('rickandmorty clicked')},false); //false is default
+
+    // //using event listener gives us pointer events
+    // sketch.addEventListener('click',function (e) {console.log(e)},false);
+
+    //     //learn these events: 
+    //     // type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget,
+    //     //clientX, clientY, screenX, screenY
+    //     //altkey, ctrlkey, shiftkey, keyCode
+
+//Event propogation:
+
+    // //If both are false then it's bubbling mode (ie bottom to top execution)
+    // allImg.addEventListener('click',function(e){console.log('image clicked')},false);
+    // wallpaper.addEventListener('click',function(e){console.log('wallpaper clicked')},false);
+
+    // //If both are true then it's capturing mode (ie top to bottom execution)
+    // allImg.addEventListener('click',function(e){console.log('image clicked')},true)
+    // wallpaper.addEventListener('click',function(e){console.log('wallpaper clicked')},true)
+    
+    // //using stop propogation in bubbling up
+    // allImg.addEventListener('click',function(e){console.log('image clicked')},false)
+    // wallpaper.addEventListener('click',function(e){console.log('wallpaper clicked'); e.stopPropagation();},false)
+    
+    // //prevent default
+    // google.addEventListener('click',function(e){e.preventDefault()},false)
+
+//Removing elements
+
+    // //this removes whole list if clicked outside the image
+    // allImg.addEventListener('click',function(e){
+    //     console.log(e.target.parentNode);
+    //     e.target.parentNode.remove()
+    // },false)
+    
+    // //use tagName to solve this problem
+    // allImg.addEventListener('click',function(e){
+    //     console.log(e.target.parentNode.tagName);
+    //     if (e.target.parentNode.tagName == 'LI') {
+    //         e.target.parentNode.remove()
+    //     }
+    //     // e.target.parentNode.remove()
+    // },false)
+
+</script>
+</html>
