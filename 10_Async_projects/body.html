@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Harry Potter</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Select html elements
+    const title = document.getElementById('title');
+    const startt = document.getElementById('start');
+    const stopp = document.getElementById('stop');
+
+    // add event listener to start button to start printing date in console
+    // using setInterval(function,interval in miliseconds)
+        startt.addEventListener('click',()=>{
+            setInterval(() => {
+                console.log("date in miliseconds:",Date.now())
+            },1000)}
+        ,false);
+
+    // add event listener to stop button to stop printing using clearInterval()
+        
+        // I DON'T KNOW HOW TO DO THAT...
+
+    //  setTimeout(function(){title.innerText="sonu mama lazy aahe 😂to padat rahato 😣💨"},2000);
+</script>
+</html>
