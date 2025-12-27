@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML test</title>
+</head>
+<body style="background-color: #212121;">
+    <h1 id="display">Testing...</h1>
+    <div><img src="rickAndMorty.jpg" alt="" id="image"></div>
+</body>
+<script>
+    let display = document.getElementById('display')
+    const photo = document.getElementById('image')
+    let followers;
+    const rurl = 'https://api.github.com/users/Chaitanya1174'
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET',rurl);
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState == 4) {
+            const data = JSON.parse(this.responseText)
+            console.log(data.following)
+            followers = data.following
+            console.log(data);
+            display.innerText = followers
+            photo.src=data.avatar_url;
+        }
+    }
+</script>
+</html>

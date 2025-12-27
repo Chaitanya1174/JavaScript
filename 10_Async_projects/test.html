@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Harryy Potaahhh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // Select html elements
+    const title = document.getElementById('title');
+    const startt = document.getElementById('start');
+    const stopp = document.getElementById('stop');
+
+    // let intervalId = null;
+
+    // add event listener to start button to start printing date in console
+    // using setInterval(function,interval in miliseconds)
+    
+    function starter() {
+            intervalId = setInterval(() => {
+                console.log("hello");
+            }, 1000);
+        }
+    startt.addEventListener('click', starter);
+
+    // add event listener to stop button to stop printing using clearInterval()
+    function stopper() {
+            clearInterval(intervalId);
+        }
+    stopp.addEventListener('click', stopper);
+
+    //  setTimeout(function(){title.innerText="sonu mama lazy aahe 😂to padat rahato 😣💨"},2000);
+</script>
+</html>
