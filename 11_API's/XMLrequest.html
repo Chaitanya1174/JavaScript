@@ -6,28 +6,37 @@
     <title>XML test</title>
 </head>
 <body style="background-color: #212121;">
-    <h1 id="display">Testing...</h1>
-    <div><img src="rickAndMorty.jpg" alt="" id="image"></div>
+    <h1 id="display">Open console</h1>
 </body>
 <script>
+// Get html elements
     let display = document.getElementById('display')
-    const photo = document.getElementById('image')
-    let followers;
+
+// Store string inside variable
     const rurl = 'https://api.github.com/users/Chaitanya1174'
+
+// Store xmlhttprequest() inside xhr as object
     const xhr = new XMLHttpRequest();
 
+// Use open to request data from url
     xhr.open('GET',rurl);
+
+// Use send to finalize the request
     xhr.send();
 
+// There are 4 readyStates of a request
+// 0	UNSENT	            Client has been created. open() not called yet.
+// 1	OPENED	            open() has been called.
+// 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+// 3	LOADING	            Downloading; responseText holds partial data.
+// 4	DONE	            The operation is complete.
+
+// onreadystatechange detects change in readystate
     xhr.onreadystatechange = function () {
         console.log(xhr.readyState);
-        if (xhr.readyState == 4) {
-            const data = JSON.parse(this.responseText)
-            console.log(data.following)
-            followers = data.following
-            console.log(data);
-            display.innerText = followers
-            photo.src=data.avatar_url;
+        if (xhr.readyState == 4) {   // if readystate changes to done
+            const data = JSON.parse(this.responseText) //responseText is requested data from the url. this. indicates current context
+            console.log(data) //JSON.parse converts data into object
         }
     }
 </script>
