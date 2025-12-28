@@ -1,9 +1,9 @@
 # JavaScript
-Notes from 'Chai Aur Code' JavaScript playlist
-### Useful terminal commands:
+My notes from 'Chai Aur Code' JavaScript playlist
+### Useful terminal commands I used to do things faster
 - Create file: type nul > filename.txt
 - Create folder: mkdir foldername
 - Delete folder: rmdir foldername (only empty folder)
 ### API Object simplifying website: JSON formatter .org
-### Note:
-    - to learn: 'this.','new'
+### To do:
+- learn: 'this.','new'
